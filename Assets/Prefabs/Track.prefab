@@ -97,7 +97,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4762716499247861325}
   - component: {fileID: 8994988406247091928}
-  - component: {fileID: 5730836462480791356}
   m_Layer: 0
   m_Name: Track
   m_TagString: Untagged
@@ -176,20 +175,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5730836462480791356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7215594851899833245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258542d437c0a44408f0eb2fc8fae75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  track: {fileID: 8994988406247091928}
 --- !u!1 &7239756366786658807
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1156466421638866239}
+  - component: {fileID: 4062609154071303107}
   m_Layer: 0
   m_Name: Track
   m_TagString: Untagged
@@ -430,3 +416,17 @@ Transform:
   - {fileID: 4762716499247861325}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4062609154071303107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636877652483175958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 258542d437c0a44408f0eb2fc8fae75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  track: {fileID: 8994988406247091928}
