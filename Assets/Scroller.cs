@@ -4,6 +4,8 @@ public class TrackScroller : MonoBehaviour
 {
     [Range(0f, 20f)]
     [SerializeField] float speed = 3f;
+    public float endPosition = -10;
+    public float startPosition = 10;
 
     void Update()
     {
@@ -21,9 +23,9 @@ public class TrackScroller : MonoBehaviour
 
     void ResetTrack(Transform t)
     {
-        if (t.position.y <= -10)
+        if (t.position.y <= endPosition)
         {
-            t.position = new Vector3(t.position.x, 10, t.position.z);
+            t.position = new Vector3(t.position.x, startPosition, t.position.z);
         }
     }
 }
