@@ -3,31 +3,26 @@ using UnityEngine;
 public class TrackScroller : MonoBehaviour
 {
     [SerializeField] float speed = 3f;
-    [SerializeField] SpriteRenderer track;
 
-    float spriteHeight;
-
-    private void Start()
-    {
-        spriteHeight = track.bounds.size.y;
-    }
     void Update()
     {
-        Scroll();
-        ResetTrack();
-    }
-
-    void ResetTrack()
-    {
-        if (transform.position.y <= -spriteHeight/3)
+        foreach (Transform child in transform)
         {
-            transform.position = new Vector3(transform.position.x, spriteHeight/3, transform.position.z);
+            Scroll(child);
+            ResetTrack(child);
         }
-
     }
 
-    void Scroll()
+    void Scroll(Transform t)
     {
-        transform.position += Vector3.down * speed * Time.deltaTime;
+        t.position += Vector3.down * speed * Time.deltaTime;
+    }
+
+    void ResetTrack(Transform t)
+    {
+        if (t.position.y <= -10)
+        {
+            t.position = new Vector3(t.position.x, 10, t.position.z);
+        }
     }
 }
