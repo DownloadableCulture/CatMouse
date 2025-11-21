@@ -9,6 +9,8 @@ public class TrackScroller : MonoBehaviour
     public float endPosition = -10f;
     public float yTop = 5f;
     public float yBottom = -5f;
+
+    public bool randomizeXOnReset = true;
     public float xRandomMin = -2f;
     public float xRandomMax = 2f;
 
@@ -42,6 +44,14 @@ public class TrackScroller : MonoBehaviour
     }
 
     void ResetChild(Transform child, int index)
+    {
+        if (randomizeXOnReset)
+            RandomizeX(child, index);
+        else
+            child.position = new Vector3(originalX[index], startPosition, child.position.z);
+    }
+
+    void RandomizeX(Transform child, int index)
     {
         float randomX = Random.Range(xRandomMin, xRandomMax);
         child.position = new Vector3(randomX, startPosition, child.position.z);
