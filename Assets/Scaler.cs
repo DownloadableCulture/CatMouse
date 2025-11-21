@@ -10,10 +10,11 @@ public class Scaler : MonoBehaviour
         foreach (Transform child in transform)
         {
             float y = child.position.y;
-            float scale = baseScale - (y * scaleMultiplier);
-            scale = Mathf.Max(0.1f, scale);
-
-            child.localScale = new Vector3(scale, scale, scale);
+            float scaleFactor = baseScale - (y * scaleMultiplier);
+            scaleFactor = Mathf.Max(0.1f, scaleFactor);
+           
+            Vector3 baseLocalScale = child.localScale.normalized;
+            child.localScale = baseLocalScale * scaleFactor;
         }
     }
 }
