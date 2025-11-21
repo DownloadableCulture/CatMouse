@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TrackScroller : MonoBehaviour
 {
+    [Range(0f, 20f)]
     [SerializeField] float speed = 3f;
 
     void Update()
